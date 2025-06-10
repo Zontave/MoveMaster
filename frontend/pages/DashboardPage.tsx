@@ -6,7 +6,7 @@ import { Move, Package, LocationStatus, AuditLogEntry } from '../types';
 import { SummaryCard } from '../components/Dashboard/SummaryCard';
 import { Spinner } from '../components/Common/Spinner';
 import { HomeIcon, TruckIcon, PackageIcon, QrCodeIcon, SearchIcon, EyeIcon } from '../components/Common/Icons';
-import { calculateVolume } from '../../utils/helpers'; // formatDate removed as not used directly here
+import { calculateVolume } from '../utils/helpers'; // formatDate removed as not used directly here
 import { useNavigate } from 'react-router-dom';
 import { Input } from '../components/Common/Input';
 import { QrCodeScanner } from '../components/Packages/QrCodeScanner';

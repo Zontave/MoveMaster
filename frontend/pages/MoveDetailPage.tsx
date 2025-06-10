@@ -13,7 +13,7 @@ import { PackageDetailModal } from '../components/Packages/PackageDetailModal';
 import { QrCodeScanner } from '../components/Packages/QrCodeScanner';
 import { generatePdfLabel } from '../services/pdfService';
 // import { QrCodeGenerator } from '../components/Packages/QrCodeGenerator'; // QrCodeGenerator is used inside PackageListItem and PackageDetailModal
-import { formatDate, calculateVolume } from '../../utils/helpers';
+import { formatDate, calculateVolume } from '../utils/helpers';
 import { PlusIcon, PencilIcon, TrashIcon, MapPinIcon, HomeIcon, TruckIcon as MoveTruckIcon, QrCodeIcon, SearchIcon, EyeIcon, FunnelIcon, UsersIcon } from '../components/Common/Icons'; // Changed FilterIcon to FunnelIcon
 import { Input, TextArea } from '../components/Common/Input'; 
 import { Select } from '../components/Common/Select'; // Corrected Select import
