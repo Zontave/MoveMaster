@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-R-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoveMaestro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- jsPDF for PDF generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- html2canvas for capturing HTML to image (used with jsPDF) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <!-- html5-qrcode for QR code scanning -->
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+  <style>
+    /* Custom scrollbar for better aesthetics */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    /* Ensure modals are on top */
+    .modal-backdrop {
+      z-index: 40; /* Lower than modal content */
+    }
+    .modal-content {
+      z-index: 50;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "html2canvas": "https://esm.sh/html2canvas@^1.4.1",
+    "@google/genai": "https://esm.sh/@google/genai@^1.4.0",
+    "jspdf": "https://esm.sh/jspdf@^3.0.1",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2",
+    "qrcode.react": "https://esm.sh/qrcode.react@^4.2.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "qrcode": "https://esm.sh/qrcode@^1.5.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-slate-100">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+  <noscript>
+    This application requires JavaScript to be enabled.
+    Key dependencies for this application (ensure they are installed if not using CDNs for a production build):
+    - react, react-dom
+    - react-router-dom
+    - @google/genai
+    - qrcode.react
+    - jspdf
+    - html2canvas
+    - html5-qrcode
+  </noscript>
+</body>
+</html>

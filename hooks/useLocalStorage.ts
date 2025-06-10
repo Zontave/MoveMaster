@@ -1,0 +1,43 @@
+
+import { useState, useEffect } from 'react';
+
+function useLocalStorage<T,>(key: string, initialValue: T): [T, React.Dispatch<React.SetStateAction<T>>] {
+  const getStoredValue = (): T => {
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      console.warn(`Error reading localStorage key "${key}":`, error);
+      return initialValue;
+    }
+  };
+
+  const [storedValue, setStoredValue] = useState<T>(getStoredValue);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(key, JSON.stringify(storedValue));
+    } catch (error) {
+      console.warn(`Error setting localStorage key "${key}":`, error);
+    }
+  }, [key, storedValue]);
+  
+  // Listen for storage events from other tabs/windows
+  useEffect(() => {
+    const handleStorageChange = (event: StorageEvent) => {
+      if (event.key === key) {
+        setStoredValue(event.newValue ? JSON.parse(event.newValue) : initialValue);
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, [key, initialValue]);
+
+
+  return [storedValue, setStoredValue];
+}
+
+export default useLocalStorage;

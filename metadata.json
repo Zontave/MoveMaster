@@ -1,0 +1,7 @@
+{
+  "name": "MoveMaestro",
+  "description": "A comprehensive React application to manage all aspects of your house move, from organizing packages with QR codes and PDF labels to tracking progress on a central dashboard. Features mock authentication and uses local storage for data persistence. Includes Gemini API for smart suggestions.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
