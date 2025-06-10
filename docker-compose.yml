@@ -1,8 +1,10 @@
+version: '3.8'
 services:
   frontend:
     build: ./frontend
     ports:
       - "8080:80"
+      - "8443:443"
     restart: unless-stopped
     depends_on:
       - backend
@@ -16,9 +18,9 @@ services:
       - SERVER_SSL_KEY_STORE_PASSWORD=changeit
       - SERVER_SSL_KEY_STORE_TYPE=PKCS12
     ports:
-      - "8443:8443"
+      - "8444:8443"
     volumes:
-      - ./certs:/certs:ro
+      - ./backend/src/main/resources:/certs:ro
     depends_on:
       - db
   db:
